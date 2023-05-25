@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\InputController;
+use App\Http\Controllers\ForminputController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -46,3 +49,10 @@ Route::get('/pemeriksaan', function(){
         "GD3" => "Sewaktu/acak : 70 -125 mg/dl"
     ]);
 });
+
+
+Route::get('/input', [InputController::class, 'index']);
+Route::post('/output', [InputController::class, 'output']);
+
+Route::get('/forminput', [ForminputController::class, 'index']);
+Route::post('/forminput', [ForminputController::class, 'output']);
