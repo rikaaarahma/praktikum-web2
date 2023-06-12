@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Produk;
 use Illuminate\Http\Request;
 use App\Models\KategoriProduk;
+use APP\Models\Pesanan;
 
 class ProdukController extends Controller
 {
