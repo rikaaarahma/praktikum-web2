@@ -63,7 +63,7 @@ Route::get('/forminput', [ForminputController::class, 'index']);
 Route::post('/forminput', [ForminputController::class, 'output']);
 
 // ini route tampilan admin backend
-Route::group(['middleware' => ['auth']], function(){
+Route::group(['middleware' => ['auth', 'peran:admin-manager']], function(){
     Route::prefix('admin')->group(function (){
         Route::get('/dashboard', [DashboardController::class, 'index']);
         Route::get('/logout', [DashboardController::class, 'logout']);
